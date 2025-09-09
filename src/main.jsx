@@ -7,6 +7,8 @@ import { BrowserRouter, createBrowserRouter, Route, RouterProvider, Routes } fro
 import { Login } from './pages/Login.jsx';
 import { Cadastro } from './pages/Cadastro.jsx';
 import { NotFound } from './pages/NotFound.jsx';
+import { Home } from './pages/home.jsx';
+import { Contato } from './pages/Contato.jsx';
 
 const router = createBrowserRouter([
   {
@@ -15,11 +17,15 @@ const router = createBrowserRouter([
   },
   {
     path: '/home',
-    element: <App/>
+    element: <Home/>
   },
   {
     path: '/cadastro',
     element: <Cadastro/>
+  },
+  {
+    path: '/contato',
+    element: <Contato/>
   },
   {
     path: '*',
