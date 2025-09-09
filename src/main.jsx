@@ -9,32 +9,42 @@ import { Cadastro } from './pages/Cadastro.jsx';
 import { NotFound } from './pages/NotFound.jsx';
 import { Home } from './pages/home.jsx';
 import { Contato } from './pages/Contato.jsx';
+import { Layout } from './components/Layout.jsx';
 
 const router = createBrowserRouter([
   {
     path: '/',
-    element: <Login/>
+    element: <Login />
   },
   {
-    path: '/home',
-    element: <Home/>
-  },
-  {
-    path: '/cadastro',
-    element: <Cadastro/>
-  },
-  {
-    path: '/contato',
-    element: <Contato/>
+    path: '/',
+    element: <Layout />,
+    children: [
+      {
+        path: '/home',
+        element: <Home />
+      },
+      {
+        path: '/cadastro',
+        element: <Cadastro />
+      },
+      {
+        path: '/contato',
+        element: <Contato />
+      }
+    ],
   },
   {
     path: '*',
-    element: <NotFound/>
+    element: <NotFound />
   }
-]);
+
+])
+
+
 
 createRoot(document.getElementById('root')).render(
   <StrictMode>
-   <RouterProvider router={router}/>
+    <RouterProvider router={router} />
   </StrictMode>
 )
